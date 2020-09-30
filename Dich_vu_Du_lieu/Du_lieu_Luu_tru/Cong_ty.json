@@ -1,0 +1,70 @@
+{
+  "Ten": "Vũ trụ Di động",
+  "Ma_so": "VU_TRU_DI_DONG",
+  "Dien_thoai": "84-28555722",
+  "Dia_chi": "112 Nguyễn văn Út",
+  "Mail": "vutrudidong@gmail.com",
+  "footer":"Trung tâm tin học - ĐHKHTN",
+  "Danh_sach_Nhom_Dien_thoai": [
+    {
+      "Ten": "Android",
+      "Ma_so": "ANDROID"
+    },
+    {
+      "Ten": "iphone",
+      "Ma_so": "IPHONE"
+    }
+  ],
+  "Quan_ly": {
+    "Ho_ten": "Nguyễn văn bé Xíu",
+    "Ma_so": "QL_1",
+    "Ten_Dang_nhap": "QL_1",
+    "Mat_khau": "QL_1"
+  },
+  "Nhan_vien_Nhap_hang": {
+    "Ho_ten": "Nguyễn thông Minh",
+    "Ma_so": "NV_7",
+    "Ten_Dang_nhap": "NV_7",
+    "Mat_khau": "NV_7"
+  },
+  "Danh_sach_Nhan_vien_Ban_hang": [
+    {
+      "Ho_ten": "Tô thị bé Bé",
+      "Ma_so": "NV_1",
+      "Ten_Dang_nhap": "NV_1",
+      "Mat_khau": "NV_1"
+    },
+    {
+      "Ho_ten": "Nguyên văn bé Lớn",
+      "Ma_so": "NV_2",
+      "Ten_Dang_nhap": "NV_2",
+      "Mat_khau": "NV_2"
+    },
+    {
+      "Ho_ten": "Hứa ngọc bé Nhỏ",
+      "Ma_so": "NV_3",
+      "Ten_Dang_nhap": "NV_3",
+      "Mat_khau": "NV_3"
+    }
+  ],
+  "Danh_sach_Nhan_vien_Giao_hang": [
+    {
+      "Ho_ten": "Nguyễn văn Nhanh",
+      "Ma_so": "NV_4",
+      "Ten_Dang_nhap": "NV_4",
+      "Mat_khau": "NV_4"
+    },
+    {
+      "Ho_ten": "Nguyên thị Chậm",
+      "Ma_so": "NV_5",
+      "Ten_Dang_nhap": "NV_5",
+      "Mat_khau": "NV_5"
+    },
+    {
+      "Ho_ten": "Lê văn Nhân viên Mới",
+      "Ma_so": "NV_10",
+      "Ten_Dang_nhap": "NV_10",
+      "Mat_khau": "NV_10"
+    }
+  ]
+}

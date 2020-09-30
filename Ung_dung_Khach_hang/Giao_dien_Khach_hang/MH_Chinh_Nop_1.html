@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Danh sách Điện thoại</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/dinh_dang_man_hinh_chinh.css">
+    <link rel="stylesheet" href="../css/site.css">
+    <script src=../Xu_ly/Xu_ly_3L.js></script>
+
+</head>
+<style>
+    a:hover {
+        color: #f63 !important;
+    }
+</style>
+
+<body>
+    <!-- header-->
+
+    <div class="container">
+        <div class="col-xs-12 col-md-12 col-sm-12" id="Th_Cua_hang">
+
+
+
+
+        </div>
+
+    </div>
+    <!-- header-->
+    <!-- Menu-->
+    <div class="container">
+        <div class="row menu" id="Th_menu_mobile">
+            <nav class="navbar navbar-inverse navbar-static-top" style="margin-bottom:0px;background-color:#fff">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand">QT MOBILE</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="menu">
+                        <ul class="nav navbar-nav" id="Th_Danh_sach_Chuc_nang">
+                            <li class="active"><a id="Th_Home"><span class="glyphicon glyphicon-home"></span>Tất Cả</a>
+                            </li>
+                            <li><a id="Th_Iphone"><span class="glyphicon glyphicon-phone"></span> IPHONE</a></li>
+                            <li><a id="Th_Android"><span class="glyphicon glyphicon-globe"></span> ANDROID</a></li>
+
+                            <li><a id="Th_Mua_hang"><span id="Th_Gio_hang"
+                                        class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row menu" id="th_menu_box">
+
+
+            <div class="col-xs-12 col-md-6 pull-left hidden-xs">
+                <label class="text-danger">Tìm theo tên:</label>
+                <input type="text" class="border border-info" id="Th_gtTim" placeholder="Nhập giá trị..."
+                    onkeyup="KeyCode(event)">
+                <button id="Th_Tim" class="btn btn-primary">
+                    <i class="fa fa-search-plus">Kết Quả </i>
+                </button>
+            </div>
+            <div class="col-xs-12 col-md-6 text-right">
+                <select class="border border-danger" id="Th_Sap_xep">
+                    <option value="0">-- Sắp xếp theo --</option>
+                    <option value="1">Sắp xếp theo Tên (A->Z)</option>
+                    <option value="2">Sắp xếp theo Tên (Z->A)</option>
+                    <option value="3">Sắp xếp theo Giá (A->Z)</option>
+                    <option value="4">Sắp xếp theo Giá (Z->A)</option>
+                </select>
+
+                <select class="border border-danger" id="Th_Loc_gia">
+                    <option value="0-50000000">-- Chọn giá bán --</option>
+                    <option value="0-5000000">Dưới 5 triệu</option>
+                    <option value="5000000-10000000">Từ 5 triệu đến 10 triệu</option>
+                    <option value="10000000-20000000">Từ 10 triệu đến 20 triệu</option>
+                    <option value="20000000-50000000">Trên 20 triệu</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Menu-->
+    <!-- content-->
+    <div class="container">
+        <div class="row menu" id="Th_Thong_bao_bao">
+            <div class="col-xs-12">
+                <div class="btn btn-outline-danger btn-block" id="Th_Thong_bao">
+                    KHUNG THÔNG BÁO
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row content">
+            <div class="col-xs-12">
+                <legend class="text-danger">DANH SÁCH ĐIỆN THOẠI</legend>
+                <div id="Th_Danh_sach"></div>
+            </div>
+
+        </div>
+
+        <div class="row content text-center">
+            <div class="col-xs-12">
+                <ul class="pagination">
+                    <li><a href="javascript:prevPage()" id="btn_prev">Prev</a></li>
+                    <li><a href="javascript:prevPage()" id="btn_next">Next</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- content-->
+    <!-- footer-->
+    <div class="container">
+        <div class="row footer">
+            <div class="col-xs-12 col-md-12 col-sm-12" id="Th_Cuoi_trang">
+
+            </div>
+        </div>
+    </div>
+    <!-- footer-->
+    <!-- The Modal -->
+    <div id="Th_myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Giỏ hàng của bạn</h2>
+            </div>
+            <div class="modal-body">
+                <iframe id="Khung_Gio_hang"></iframe>
+            </div>
+            <!-- <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div> -->
+        </div>
+
+    </div>
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+
+    <script>
+        var Danh_sach_Dien_thoai = Doc_Danh_sach_Dien_thoai();
+        var Cua_hang = Doc_Thong_tin_Cua_hang()
+        //console.log(Danh_sach_Dien_thoai);
+        //console.log(Cua_hang);
+        Xuat_Thong_tin_Cua_hang(Cua_hang, Th_Cua_hang);
+        Xuat_Danh_sach_Dien_thoai(Danh_sach_Dien_thoai, Th_Danh_sach)
+
+        Th_Android.onclick = () => {
+            //Lọc
+            let dsAndroid = Danh_sach_Dien_thoai.filter(x => x.Nhom_Dien_thoai.Ma_so == "ANDROID");
+            //Kiểm tra
+            console.log(dsAndroid)
+            Th_Thong_bao.innerHTML = `Tổng sản phẩm Android (${dsAndroid.length})`
+            Xuat_Danh_sach_Dien_thoai(dsAndroid, Th_Danh_sach)
+        }
+
+        Th_Iphone.onclick = () => {
+            let dsIphone = Danh_sach_Dien_thoai.filter(x => x.Nhom_Dien_thoai.Ma_so == "IPHONE");
+            Th_Thong_bao.innerHTML = `Tổng sản phẩm IPHONE (${dsIphone.length})`
+            Xuat_Danh_sach_Dien_thoai(dsIphone, Th_Danh_sach)
+        }
+
+        Th_Home.onclick = () => {
+            Th_Thong_bao.innerHTML = `Tổng sản phẩm (${Danh_sach_Dien_thoai.length})`
+            Xuat_Danh_sach_Dien_thoai(Danh_sach_Dien_thoai, Th_Danh_sach)
+        }
+        //Tìm
+        Th_Tim.onclick = () => {
+            var gtTim = Th_gtTim.value.trim()
+            var Hop_le = gtTim != ""
+            //var dsDienThoai = JSON.stringify(Danh_sach_Dien_thoai);
+            if (Hop_le) {
+                var KqLoc = Danh_sach_Dien_thoai.filter(x => x.Ten.toLowerCase().includes(gtTim.toLowerCase()))
+                if (KqLoc.length > 0) {
+                    Th_Thong_bao.innerHTML = `Danh sách Điện thoại cho từ khóa <strong>${gtTim}</strong>`
+                    Xuat_Danh_sach_Dien_thoai(KqLoc, Th_Danh_sach)
+                } else {
+                    Th_Thong_bao.innerHTML = `Không tìm thấy <strong>${gtTim}</strong> trong Danh Sách Điện Thoại`
+                }
+            } else {
+                Th_Thong_bao.innerHTML = `Nhập giá trị tìm`
+                Th_gtTim.focus()
+            }
+        }
+
+        function KeyCode(event) {
+            if (event.keyCode == 13) {
+                let gtTim = event.target.value
+                let dsTim = Danh_sach_Dien_thoai.filter(x => x.Ten.toLowerCase().includes(gtTim.toLowerCase()))
+                if (dsTim.length == 0) {
+                    Th_Thong_bao.innerHTML = `Không tìm thấy: '${gtTim}' trong Danh sách Điện thoại`
+                } else {
+                    Th_Thong_bao.innerHTML = `Tìm thấy: ${dsTim.length} Điện thoại thỏa điều kiện '${gtTim}' `;
+                    Xuat_Danh_sach_Dien_thoai(dsTim, Th_Danh_sach)
+                }
+            }
+        }
+
+        // Sắp xếp
+        Th_Sap_xep.onchange = () => {
+            let chon = Th_Sap_xep.value;
+            switch (parseInt(chon)) {
+                case 1:
+                    Sap_Tang_theo_Ten()
+                    break;
+                case 2:
+                    Sap_Giam_theo_Ten()
+                    break;
+                case 3:
+                    Sap_Tang_Gia()
+                    break;
+                case 4:
+                    Sap_Giam_Gia()
+                    break;
+            }
+        }
+
+        // Xây dựng các hàm sắp xếp
+        // Sắp xếp tăng
+        function Sap_Tang_theo_Ten() {
+            // Là chuỗi
+            Danh_sach_Dien_thoai.sort((a, b) => a.Ten.localeCompare(b.Ten))
+            Xuat_Danh_sach_Dien_thoai(Danh_sach_Dien_thoai, Th_Danh_sach)
+        }
+        // Sắp xếp gỉam
+        function Sap_Giam_theo_Ten() {
+            // Là chuỗi
+            Danh_sach_Dien_thoai.sort((a, b) => b.Ten.localeCompare(a.Ten))
+            Xuat_Danh_sach_Dien_thoai(Danh_sach_Dien_thoai, Th_Danh_sach)
+        }
+
+        function Sap_Tang_Gia() {
+            // Là số
+            Danh_sach_Dien_thoai.sort((a, b) => {
+                return parseInt(a.Don_gia_Ban) - parseInt(b.Don_gia_Ban)
+            })
+            Xuat_Danh_sach_Dien_thoai(Danh_sach_Dien_thoai, Th_Danh_sach)
+
+        }
+        function Sap_Giam_Gia() {
+            // Là số
+            Danh_sach_Dien_thoai.sort((a, b) => {
+                return parseInt(b.Don_gia_Ban) - parseInt(a.Don_gia_Ban)
+            })
+            Xuat_Danh_sach_Dien_thoai(Danh_sach_Dien_thoai, Th_Danh_sach)
+        }
+
+        // Lọc giá
+        Th_Loc_gia.onchange = () => {
+            let chon = Th_Loc_gia.value;
+            let dsGia = chon.split("-");
+            console.log(dsGia);
+            let bd = parseInt(dsGia[0]);
+            let kt = parseInt(dsGia[1]);
+            let dsLocGia = Danh_sach_Dien_thoai.filter(x => parseInt(x.Don_gia_Ban) >= bd && parseInt(x.Don_gia_Ban) <= kt)
+            Xuat_Danh_sach_Dien_thoai(dsLocGia, Th_Danh_sach)
+        }
+
+
+        //Chuyen
+    </script>
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+
+</html>
